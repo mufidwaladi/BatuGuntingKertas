@@ -3,12 +3,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-primary);
-  color: var(--text-main);
+  background-color: var(--bg-paper);
+  color: var(--ink);
 }
 
 /* =========================================
-   Halaman Home
+   Halaman Home (Kartun Komik)
    ========================================= */
 .home-container {
   display: flex;
@@ -22,64 +22,37 @@
 
 .hero-card {
   width: 100%;
-  max-width: 580px;
-  background: linear-gradient(145deg, var(--bg-secondary), #152033);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 40px 28px;
-  box-shadow: var(--shadow-lg);
+  max-width: 560px;
+  background-color: var(--bg-card);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: 6px 6px 0 var(--ink);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  animation: fadeIn 0.4s ease-out;
+  gap: 18px;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--primary-light);
-  color: #818cf8;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid rgba(99, 102, 241, 0.3);
-}
-
-.icon-glow-wrapper {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+.hero-emblem-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
-}
-
-.home-icon {
-  color: #818cf8;
-  animation: pulseIcon 2s infinite alternate ease-in-out;
 }
 
 .home-title {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.5px;
-  background: linear-gradient(to right, #ffffff, #c7d2fe);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
 }
 
 .home-subtitle {
-  color: var(--text-muted);
-  font-size: 1rem;
-  max-width: 440px;
-  line-height: 1.5;
+  color: var(--ink-muted);
+  font-size: 1.02rem;
+  font-weight: 700;
+  max-width: 430px;
 }
 
 .weapon-preview-row {
@@ -87,57 +60,70 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin: 10px 0 16px;
+  margin: 4px 0 8px;
   flex-wrap: wrap;
 }
 
 .preview-tag {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--bg-paper);
+  border: 2.5px solid var(--ink);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink);
 }
 
 .preview-arrow {
-  color: #818cf8;
-  font-weight: 800;
-  font-size: 0.9rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .home-actions {
   display: flex;
   gap: 12px;
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 4px;
 }
 
+/* Tombol Utama & Sekunder Bergaya Komik */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 13px 26px;
-  background: linear-gradient(135deg, var(--primary), #4338ca);
-  color: white;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 24px;
+  background-color: var(--comic-yellow);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
   flex: 1;
-  min-width: 180px;
+  min-width: 170px;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4f46e5, #3730a3);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.55);
+  background-color: var(--comic-yellow-hover);
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.btn-primary:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 .btn-secondary {
@@ -145,36 +131,50 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 22px;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  border-radius: var(--radius-md);
-  font-size: 0.95rem;
+  min-height: 48px;
+  padding: 12px 20px;
+  background-color: var(--bg-card);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
 }
 
 .btn-secondary:hover {
-  background-color: var(--bg-card-hover);
-  border-color: #64748b;
-  transform: translateY(-2px);
+  background-color: var(--bg-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.btn-secondary:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 /* =========================================
-   Halaman GameBoard (Fokus: Skor & Senjata)
+   Halaman GameBoard
    ========================================= */
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 16px 48px;
+  padding: 28px 16px 48px;
   max-width: 680px;
   width: 100%;
   margin: 0 auto;
-  gap: 20px;
-  animation: fadeIn 0.3s ease-out;
+  gap: 18px;
+}
+
+.page-heading {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  align-self: flex-start;
 }
 
 .nav-header {
@@ -182,166 +182,237 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .nav-header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.btn-reset-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: transparent;
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-reset-link:hover {
-  color: #f43f5e;
-  border-color: #f43f5e;
-  background-color: rgba(244, 63, 94, 0.1);
+  flex-wrap: wrap;
 }
 
 .btn-back,
-.btn-history-link {
+.btn-history-link,
+.btn-reset-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 14px;
+  background-color: var(--bg-card);
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  color: var(--ink);
   font-size: 0.92rem;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.2s;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
 }
 
 .btn-back:hover,
 .btn-history-link:hover {
-  color: #fff;
-  border-color: #64748b;
-  background-color: var(--bg-card-hover);
+  background-color: var(--bg-soft);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .btn-history-link {
-  color: #818cf8;
-  border-color: rgba(99, 102, 241, 0.3);
+  background-color: var(--comic-blue-soft);
 }
 
 .btn-history-link:hover {
-  border-color: var(--primary);
-  background-color: var(--primary-light);
+  background-color: #BFDBFE;
 }
 
-/* --- ScoreBoard Ringkas (Hanya Pemain vs Komputer) --- */
+.btn-reset-link {
+  background-color: var(--comic-coral-soft);
+}
+
+.btn-reset-link:hover {
+  background-color: #FECDD3;
+}
+
+.btn-back:active,
+.btn-history-link:active,
+.btn-reset-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* --- ScoreBoard Komik --- */
 .scoreboard-compact {
   width: 100%;
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, #151e30 100%);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 20px 24px;
-  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
 .score-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .score-box {
   display: flex;
   align-items: center;
-  gap: 14px;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 12px 20px;
-  border-radius: var(--radius-md);
+  gap: 12px;
+  border: 2.5px solid var(--ink);
+  padding: 12px 16px;
+  border-radius: 12px;
   flex: 1;
-  max-width: 220px;
+}
+
+.player-box {
+  background-color: var(--comic-blue-soft);
+}
+
+.computer-box {
+  background-color: var(--comic-coral-soft);
 }
 
 .score-box .avatar-icon {
   width: 44px;
   height: 44px;
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
+  border: 2.5px solid var(--ink);
+  background-color: var(--bg-card);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-secondary);
-}
-
-.player-box .avatar-icon {
-  color: var(--player-color);
-  background-color: rgba(129, 140, 248, 0.15);
-}
-
-.computer-box .avatar-icon {
-  color: var(--computer-color);
-  background-color: rgba(244, 63, 94, 0.15);
+  flex-shrink: 0;
 }
 
 .score-label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ink);
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .score-value {
-  font-size: 2.3rem;
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.player-score {
-  color: var(--player-color);
-}
-
-.computer-score {
-  color: var(--computer-color);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--ink);
 }
 
 .score-vs {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
-  background-color: var(--bg-primary);
-  border: 2px solid var(--border-color);
+  background-color: var(--comic-yellow);
+  border: 2.5px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #94a3b8;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
 }
 
-/* --- Game Panel (Arena Main) --- */
+/* --- Game Panel --- */
 .game-panel {
   width: 100%;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 24px;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card);
+  border: 3px solid var(--ink);
+  padding: 22px 20px 26px;
+  border-radius: 18px;
+  box-shadow: 5px 5px 0 var(--ink);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+}
+
+/* --- Hasil Pilihan Pemain vs Komputer --- */
+.duel-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.duel-card {
+  flex: 1;
+  min-width: 0;
+  background-color: var(--bg-paper);
+  border: 2.5px dashed var(--ink);
+  border-radius: 14px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.duel-card.has-choice {
+  border-style: solid;
+}
+
+.duel-player.has-choice {
+  background-color: var(--comic-blue-soft);
+}
+
+.duel-computer.has-choice {
+  background-color: var(--comic-coral-soft);
+}
+
+.duel-card-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.duel-card.has-choice .duel-card-label {
+  color: var(--ink);
+}
+
+.duel-icon-frame {
+  width: 68px;
+  height: 68px;
+  background-color: var(--bg-card);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.duel-question {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.duel-choice-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--ink);
+}
+
+.duel-vs-tag {
+  flex-shrink: 0;
+  background-color: var(--comic-yellow);
+  border: 2.5px solid var(--ink);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .status-badge-container {
@@ -351,90 +422,97 @@
 
 .status-text {
   font-size: 1.05rem;
-  font-weight: 600;
-  color: #f1f5f9;
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  padding: 12px 20px;
-  border-radius: var(--radius-md);
+  font-weight: 800;
+  color: var(--ink);
+  background-color: var(--bg-paper);
+  border: 2.5px solid var(--ink);
+  padding: 12px 18px;
+  border-radius: 12px;
   width: 100%;
-  min-height: 48px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-text.status-menang {
+  background-color: var(--win-bg);
+}
+
+.status-text.status-kalah {
+  background-color: var(--lose-bg);
+}
+
+.status-text.status-seri {
+  background-color: var(--draw-bg);
 }
 
 .panel-subtitle {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ink);
   font-weight: 700;
 }
 
 .weapon-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 14px;
 }
 
-/* --- Weapon Button Modern --- */
+/* --- Tombol Senjata Kartun --- */
 .weapon-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 22px 14px;
-  background-color: var(--bg-primary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--text-main);
+  min-height: 132px;
+  padding: 18px 12px;
+  background-color: var(--bg-paper);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+  color: var(--ink);
 }
 
 .weapon-btn:hover {
-  border-color: var(--primary);
-  background-color: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(99, 102, 241, 0.28);
+  background-color: var(--comic-yellow);
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 var(--ink);
 }
 
 .weapon-btn:active {
-  transform: scale(0.96);
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.weapon-btn.is-selected {
+  background-color: var(--comic-yellow);
 }
 
 .weapon-icon-box {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  border: 2.5px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
-}
-
-.weapon-btn:hover .weapon-icon-box {
-  transform: scale(1.1);
-}
-
-.weapon-icon {
-  color: #c7d2fe;
 }
 
 .weapon-label {
+  font-family: var(--font-display);
   text-transform: capitalize;
   font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  color: #f1f5f9;
+  font-size: 1.1rem;
+  color: var(--ink);
 }
 
 /* =========================================
-   Halaman History (Route Baru)
+   Halaman History
    ========================================= */
 .history-page-header {
   width: 100%;
@@ -449,33 +527,37 @@
   gap: 10px;
 }
 
-.history-page-title h2 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-}
-
-.history-page-title .title-icon {
-  color: #818cf8;
+.history-page-title h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .btn-clear-history {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: transparent;
-  border: 1px solid #f43f5e;
-  color: #f43f5e;
+  min-height: 44px;
+  background-color: var(--lose-bg);
+  border: 2.5px solid var(--ink);
+  color: var(--ink);
   padding: 8px 14px;
-  border-radius: var(--radius-md);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .btn-clear-history:hover {
-  background-color: rgba(244, 63, 94, 0.15);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn-clear-history:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
 }
 
 .history-stats-pills {
@@ -487,35 +569,28 @@
 .stat-pill {
   flex: 1;
   min-width: 100px;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
+  background-color: var(--bg-card);
+  border: 2.5px solid var(--ink);
+  padding: 8px 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-.stat-pill strong {
-  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .stat-pill.win {
-  border-color: rgba(16, 185, 129, 0.4);
-  color: #10b981;
+  background-color: var(--win-bg);
 }
 
 .stat-pill.lose {
-  border-color: rgba(244, 63, 94, 0.4);
-  color: #f43f5e;
+  background-color: var(--lose-bg);
 }
 
 .stat-pill.draw {
-  border-color: rgba(245, 158, 11, 0.4);
-  color: #f59e0b;
+  background-color: var(--draw-bg);
 }
 
 .history-full-panel {
@@ -523,10 +598,11 @@
 }
 
 .history-empty-box {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 48px 24px;
+  background-color: var(--bg-card);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  padding: 40px 24px;
+  box-shadow: 5px 5px 0 var(--ink);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -534,21 +610,19 @@
   gap: 12px;
 }
 
-.history-empty-box .empty-icon {
-  color: #64748b;
-  margin-bottom: 6px;
-}
-
 .empty-title {
-  font-size: 1.2rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--ink);
 }
 
 .empty-desc {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+  font-weight: 700;
+  max-width: 400px;
+  margin-bottom: 6px;
 }
 
 .history-cards-list {
@@ -558,102 +632,82 @@
 }
 
 .history-card-row {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 14px 18px;
+  background-color: var(--bg-card);
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  transition: transform 0.15s;
-}
-
-.history-card-row:hover {
-  border-color: #475569;
-  transform: translateX(2px);
+  gap: 12px;
 }
 
 .history-card-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  min-width: 90px;
+  min-width: 84px;
 }
 
 .round-badge {
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #cbd5e1;
+  color: var(--ink);
 }
 
 .round-time {
-  font-size: 0.75rem;
-  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-muted);
 }
 
 .history-card-match {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex: 1;
   justify-content: center;
   font-size: 0.95rem;
+  flex-wrap: wrap;
 }
 
-.match-fighter.player strong {
-  color: #818cf8;
-  text-transform: capitalize;
-}
-
-.match-fighter.bot strong {
-  color: #f43f5e;
+.match-fighter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   text-transform: capitalize;
 }
 
 .match-vs {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #64748b;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-muted);
   text-transform: uppercase;
 }
 
 .result-pill {
   display: inline-block;
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 0.82rem;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: var(--ink);
 }
 
 .badge-win {
-  background-color: rgba(16, 185, 129, 0.15);
-  border: 1px solid #10b981;
-  color: #10b981;
+  background-color: var(--win-bg);
 }
 
 .badge-lose {
-  background-color: rgba(244, 63, 94, 0.15);
-  border: 1px solid #f43f5e;
-  color: #f43f5e;
+  background-color: var(--lose-bg);
 }
 
 .badge-draw {
-  background-color: rgba(245, 158, 11, 0.15);
-  border: 1px solid #f59e0b;
-  color: #f59e0b;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseIcon {
-  from { transform: scale(1); filter: drop-shadow(0 0 4px rgba(129, 140, 248, 0.4)); }
-  to { transform: scale(1.08); filter: drop-shadow(0 0 14px rgba(129, 140, 248, 0.8)); }
+  background-color: var(--draw-bg);
 }
 
 /* Responsif Layar Kecil */
@@ -662,22 +716,41 @@
     flex-direction: column;
   }
   .score-box {
-    max-width: 100%;
     width: 100%;
     justify-content: center;
   }
   .weapon-buttons {
     grid-template-columns: 1fr;
   }
+  .weapon-btn {
+    flex-direction: row;
+    min-height: 76px;
+    padding: 12px 18px;
+    justify-content: flex-start;
+    gap: 16px;
+  }
   .hero-card {
     padding: 28px 18px;
   }
   .home-title {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
   .history-card-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+  }
+  .history-card-match {
+    justify-content: flex-start;
+  }
+  .duel-showcase {
     gap: 8px;
+  }
+  .duel-card {
+    padding: 10px 6px;
+  }
+  .duel-icon-frame {
+    width: 56px;
+    height: 56px;
   }
 }

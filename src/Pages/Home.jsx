@@ -1,48 +1,68 @@
 import { useNavigate } from 'react-router-dom';
-import { Gamepad2, Swords, Sparkles, History } from 'lucide-react';
+import {
+  HeroEmblemIcon,
+  BatuIcon,
+  GuntingIcon,
+  KertasIcon,
+  HistoryScrollIcon,
+} from '../components/CartoonIcons';
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
+    <main className="home-container">
       <div className="hero-card">
-        <div className="hero-badge">
-          <Sparkles size={16} />
-          <span>Player vs Computer Mode</span>
-        </div>
-        
-        <div className="icon-glow-wrapper">
-          <Gamepad2 size={64} className="home-icon" />
+        <div className="hero-emblem-wrap">
+          <HeroEmblemIcon size={88} />
         </div>
 
         <h1 className="home-title">Batu Gunting Kertas</h1>
         <p className="home-subtitle">
-          Tantang komputer dalam pertarungan taktik klasik dan raih skor tertinggi!
+          Duel cepat melawan komputer. Pilih jagoanmu dan kumpulkan poin kemenangan sebanyak mungkin.
         </p>
 
-        <div className="weapon-preview-row">
-          <span className="preview-tag">Batu</span>
-          <span className="preview-arrow">&gt;</span>
-          <span className="preview-tag">Gunting</span>
-          <span className="preview-arrow">&gt;</span>
-          <span className="preview-tag">Kertas</span>
-          <span className="preview-arrow">&gt;</span>
-          <span className="preview-tag">Batu</span>
+        <div className="weapon-preview-row" aria-label="Aturan menang">
+          <span className="preview-tag">
+            <BatuIcon size={20} />
+            <span>Batu</span>
+          </span>
+          <span className="preview-arrow" aria-hidden="true">&gt;</span>
+          <span className="preview-tag">
+            <GuntingIcon size={20} />
+            <span>Gunting</span>
+          </span>
+          <span className="preview-arrow" aria-hidden="true">&gt;</span>
+          <span className="preview-tag">
+            <KertasIcon size={20} />
+            <span>Kertas</span>
+          </span>
+          <span className="preview-arrow" aria-hidden="true">&gt;</span>
+          <span className="preview-tag">
+            <BatuIcon size={20} />
+            <span>Batu</span>
+          </span>
         </div>
-        
+
         <div className="home-actions">
-          <button className="btn-primary" onClick={() => navigate('/play')}>
-            <Swords size={20} />
-            <span>Mulai Pertarungan</span>
+          <button
+            type="button"
+            className="btn-primary"
+            onClick={() => navigate('/play')}
+          >
+            Main Sekarang
           </button>
-          
-          <button className="btn-secondary" onClick={() => navigate('/history')}>
-            <History size={18} />
+
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => navigate('/history')}
+          >
+            <HistoryScrollIcon size={18} />
             <span>Lihat Riwayat</span>
           </button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-import { User, Bot } from 'lucide-react';
+import { PlayerAvatarIcon, BotAvatarIcon } from './CartoonIcons';
 
 export default function ScoreBoard({ playerScore, computerScore }) {
   return (
-    <div className="scoreboard-container scoreboard-compact">
+    <section className="scoreboard-container scoreboard-compact" aria-label="Papan Skor">
       <div className="score-header">
         <div className="score-box player-box">
           <div className="avatar-icon">
-            <User size={22} />
+            <PlayerAvatarIcon size={28} />
           </div>
           <div>
             <p className="score-label">Pemain Menang</p>
@@ -15,11 +15,11 @@ export default function ScoreBoard({ playerScore, computerScore }) {
           </div>
         </div>
 
-        <div className="score-vs">VS</div>
+        <div className="score-vs" aria-hidden="true">VS</div>
 
         <div className="score-box computer-box">
           <div className="avatar-icon">
-            <Bot size={22} />
+            <BotAvatarIcon size={28} />
           </div>
           <div>
             <p className="score-label">Komputer Menang</p>
@@ -27,7 +27,7 @@ export default function ScoreBoard({ playerScore, computerScore }) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

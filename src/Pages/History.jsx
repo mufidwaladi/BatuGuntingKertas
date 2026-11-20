@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Trash2, History as HistoryIcon, Swords, Award } from 'lucide-react';
+import {
+  BackArrowIcon,
+  TrashIcon,
+  HistoryScrollIcon,
+  BatuIcon,
+  GuntingIcon,
+  KertasIcon,
+  HeroEmblemIcon,
+} from '../components/CartoonIcons';
+
+function renderWeaponThumb(choice) {
+  if (choice === 'batu') return <BatuIcon size={20} />;
+  if (choice === 'gunting') return <GuntingIcon size={20} />;
+  if (choice === 'kertas') return <KertasIcon size={20} />;
+  return null;
+}
 
 export default function History() {
   const navigate = useNavigate();
@@ -28,32 +43,35 @@ export default function History() {
   const draws = history.filter((h) => h.result === 'Seri').length;
 
   return (
-    <div className="game-container history-page-container">
+    <main className="game-container history-page-container">
       {/* Header Navigasi */}
-      <div className="nav-header">
-        <button className="btn-back" onClick={() => navigate('/play')}>
-          <ArrowLeft size={18} />
-          <span>Kembali ke Game</span>
+      <nav className="nav-header" aria-label="Navigasi riwayat">
+        <button type="button" className="btn-back" onClick={() => navigate('/play')}>
+          <BackArrowIcon size={18} />
+          <span>Kembali ke Arena</span>
         </button>
 
         {history.length > 0 && (
-          <button className="btn-clear-history" onClick={handleClearHistory}>
-            <Trash2 size={16} />
+          <button
+            type="button"
+            className="btn-clear-history"
+            onClick={handleClearHistory}
+          >
+            <TrashIcon size={16} />
             <span>Hapus Riwayat</span>
           </button>
         )}
-      </div>
+      </nav>
 
       {/* Judul & Ringkasan */}
-      <div className="history-page-header">
+      <header className="history-page-header">
         <div className="history-page-title">
-          <HistoryIcon size={24} className="title-icon" />
-          <h2>Riwayat Pertandingan</h2>
+          <HistoryScrollIcon size={28} />
+          <h1>Riwayat Pertandingan</h1>
         </div>
 
         <div className="history-stats-pills">
           <div className="stat-pill">
-            <Award size={16} />
             <span>Total: <strong>{totalMatches}</strong></span>
           </div>
           <div className="stat-pill win">
@@ -66,17 +84,23 @@ export default function History() {
             <span>Seri: <strong>{draws}</strong></span>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Daftar Riwayat */}
-      <div className="history-full-panel">
+      <section className="history-full-panel" aria-label="Daftar hasil ronde">
         {history.length === 0 ? (
           <div className="history-empty-box">
-            <Swords size={48} className="empty-icon" />
-            <p className="empty-title">Belum ada riwayat pertandingan</p>
-            <p className="empty-desc">Mainkan game terlebih dahulu di arena!</p>
-            <button className="btn-primary" onClick={() => navigate('/play')}>
-              Mulai Main Sekarang
+            <HeroEmblemIcon size={64} />
+            <h2 className="empty-title">Belum ada duel yang tercatat</h2>
+            <p className="empty-desc">
+              Belum ada data karena kamu belum memainkan satu ronde pun. Masuk ke arena dan mulai duel pertamamu.
+            </p>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={() => navigate('/play')}
+            >
+              Main di Arena
             </button>
           </div>
         ) : (
@@ -92,14 +116,22 @@ export default function History() {
               return (
                 <div key={item.id || index} className="history-card-row">
                   <div className="history-card-info">
-                    <span className="round-badge">Ronde #{item.roundNumber || totalMatches - index}</span>
+                    <span className="round-badge">
+                      Ronde #{item.roundNumber || totalMatches - index}
+                    </span>
                     <span className="round-time">{item.time}</span>
                   </div>
 
                   <div className="history-card-match">
-                    <span className="match-fighter player">Kamu: <strong>{item.playerChoice}</strong></span>
+                    <span className="match-fighter player">
+                      {renderWeaponThumb(item.playerChoice)}
+                      <span>Kamu: <strong>{item.playerChoice}</strong></span>
+                    </span>
                     <span className="match-vs">vs</span>
-                    <span className="match-fighter bot">Komputer: <strong>{item.computerChoice}</strong></span>
+                    <span className="match-fighter bot">
+                      {renderWeaponThumb(item.computerChoice)}
+                      <span>Komputer: <strong>{item.computerChoice}</strong></span>
+                    </span>
                   </div>
 
                   <div className="history-card-result">
@@ -110,7 +142,7 @@ export default function History() {
             })}
           </div>
         )}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
